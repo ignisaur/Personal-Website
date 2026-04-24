@@ -47,9 +47,11 @@ body {
 
 /* --- 1. The Main Banner Styling --- */
 .main-banner {
-    background-color: var(--banner-blue);
-    color: white; /* Text inside the banner defaults to white */
-    padding: 1rem 0; /* Vertical breathing room */
+    /* Change the solid color to a slightly transparent one using rgba */
+    /* 0.95 means 95% solid, 5% see-through */
+    background-color: rgba(44, 62, 80, 0.95); 
+    padding: 1rem 0;
+    color: white;
 }
 
 /* Aligning the logo/name and navigation */
@@ -93,8 +95,10 @@ body {
 
 /* --- 2. The Bio Section Styling --- */
 .bio-section {
-    padding: 5rem 0; /* Significant vertical space below the banner */
-    background-color: var(--secondary-bg);
+    padding: 5rem 0;
+    /* If this is #ffffff or var(--secondary-bg), it will hide the spirals. 
+       Set it to transparent so the canvas behind it shows through! */
+    background-color: transparent; 
 }
 
 .bio-grid {
