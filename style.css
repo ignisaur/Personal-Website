@@ -95,10 +95,14 @@ body {
 
 /* --- 2. The Bio Section Styling --- */
 .bio-section {
-    padding: 5rem 0;
-    /* If this is #ffffff or var(--secondary-bg), it will hide the spirals. 
-       Set it to transparent so the canvas behind it shows through! */
-    background-color: transparent; 
+    /* The first number (200vh) is the top/bottom padding. 
+       'vh' stands for viewport height, so 100vh = one full screen height. */
+    padding: 100vh 0; 
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200vh; /* This forces the section to be twice as tall as your screen */
 }
 
 .bio-grid {
