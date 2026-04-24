@@ -30,7 +30,7 @@ body {
 .main-banner {
     background-color: var(--banner-blue);
     color: white; /* Text inside the banner defaults to white */
-    padding: 3rem 0; /* Vertical breathing room */
+    padding: 1rem 0; /* Vertical breathing room */
 }
 
 /* Aligning the logo/name and navigation */
