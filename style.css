@@ -152,12 +152,46 @@ body {
 }
 
 /* Footer (Basic) */
-footer {
-    text-align: center;
-    padding: 3rem 0;
-    font-size: 0.9rem;
-    color: #777;
-    border-top: 1px solid #eee;
+/* --- 3. The Footer Styling (Matching Header) --- */
+.main-footer {
+    background-color: #2c3e50; /* Matching the deeper Navy blue */
+    color: white;
+    padding: 1rem 0; /* Thinner height, same as header */
+    margin-top: 0;   /* Keeps it tight against the spacer/bio */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; /* Centers the content */
+    align-items: center;
+    gap: 20px; /* Space between the "Contact me" text and buttons */
+}
+
+.footer-content p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: flex;
+    gap: 12px;
+}
+
+/* Same button style as the header: Black rectangle, rounded, white text */
+.footer-button {
+    text-decoration: none;
+    background-color: #1e1e1e; 
+    color: white !important;
+    padding: 8px 18px; /* Slightly smaller than header buttons for a footer look */
+    border-radius: 25px; 
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.footer-button:hover {
+    background-color: #444;
+    transform: translateY(-2px); /* Subtle "lift" effect when hovering */
 }
 
 footer a { color: var(--link-accent); text-decoration: none;}
