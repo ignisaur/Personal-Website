@@ -95,14 +95,13 @@ body {
 
 /* --- 2. The Bio Section Styling --- */
 .bio-section {
-    /* The first number (200vh) is the top/bottom padding. 
-       'vh' stands for viewport height, so 100vh = one full screen height. */
-    padding: 100vh 0; 
+    /* Resetting to a standard professional padding */
+    padding: 6rem 0; 
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200vh; /* This forces the section to be twice as tall as your screen */
+    min-height: auto; /* Remove the 200vh height */
 }
 
 .bio-grid {
