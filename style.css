@@ -1,0 +1,136 @@
+/* --- Basic Reset & Variables --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #2d3436;
+    /* This blue is professional: not too dark, not too bright */
+    --banner-blue: #3498db; 
+    --secondary-bg: #fdfdfd; /* Subtly different from the banner blue */
+    --link-accent: #0984e3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px; /* A wider container works well with a main banner */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- 1. The Main Banner Styling --- */
+.main-banner {
+    background-color: var(--banner-blue);
+    color: white; /* Text inside the banner defaults to white */
+    padding: 3rem 0; /* Vertical breathing room */
+}
+
+/* Aligning the logo/name and navigation */
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Your Name/Title */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* The Navigation List */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Spacing between the buttons */
+}
+
+/* Specific Style: Little rounded rectangle, black color, white text */
+.nav-button {
+    text-decoration: none;
+    background-color: #1e1e1e; /* Dark (nearly black) for contrast */
+    color: white !important; /* Forces text white even if other link styles exist */
+    padding: 10px 20px;
+    border-radius: 25px; /* Creates the pill shape/rounded rectangle */
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+/* Simple hover interaction */
+.nav-button:hover {
+    background-color: #444; /* Slightly lighter on hover */
+}
+
+/* --- 2. The Bio Section Styling --- */
+.bio-section {
+    padding: 5rem 0; /* Significant vertical space below the banner */
+    background-color: var(--secondary-bg);
+}
+
+.bio-grid {
+    display: grid;
+    /* Picture takes 1 unit of space, text takes 2 units */
+    grid-template-columns: 1fr 2fr; 
+    gap: 50px; /* Space between picture and text */
+    align-items: center; /* Vertically centers the text next to the photo */
+}
+
+/* Photo Styling (on the left) */
+.bio-image {
+    text-align: center; /* Center it within its grid column */
+}
+
+.rounded-profile {
+    max-width: 100%; /* Keep the picture responsive */
+    height: auto;
+    width: 250px; /* Sets a fixed width for the profile picture */
+    border-radius: 50%; /* This is what makes it perfectly round */
+    object-fit: cover; /* Ensures the picture fills the circle perfectly if it's not a square */
+    border: 5px solid white; /* Adds a clean border (optional but professional) */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Adds depth */
+}
+
+/* Bio Text Styling (on the right) */
+.bio-text {
+    /* (You don't need much here, the grid handles the alignment) */
+}
+
+.bio-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Tweak: On mobile, stack them vertically */
+@media (max-width: 768px) {
+    .banner-content, .bio-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .logo { margin-bottom: 1rem;}
+    .bio-text h1 { font-size: 2rem; }
+}
+
+/* Footer (Basic) */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid #eee;
+}
+
+footer a { color: var(--link-accent); text-decoration: none;}
