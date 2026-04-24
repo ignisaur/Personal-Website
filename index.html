@@ -49,56 +49,72 @@
     </footer>
 
     <script>
-function drawHelix(canvasId, isLeft) {
-    const canvas = document.getElementById(canvasId);
-    const ctx = canvas.getContext('2d');
-    
-    // Set internal resolution
-    canvas.width = 150;
-    canvas.height = window.innerHeight;
+const canvases = [
+    { id: 'leftCanvas', isLeft: true },
+    { id: 'rightCanvas', isLeft: false }
+];
 
-    const R = 20;  // Radius of fixed circle
-    const r = 10;  // Radius of rolling circle
-    const centerY = canvas.height / 2;
-    const centerX = isLeft ? 40 : 110;
-    
-    ctx.strokeStyle = 'rgba(52, 152, 219, 0.3)'; // Faded blue to match banner
-    ctx.lineWidth = 1;
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.beginPath();
-
-        // We loop through the height of the page to create the "Helix" effect
-        for (let yOffset = -200; yOffset < canvas.height + 200; yOffset += 5) {
-            let angle = (yOffset / 50); // Controls the "twist" of the helix
+function initHelix() {
+    canvases.forEach(cfg => {
+        const canvas = document.getElementById(cfg.id);
+        const ctx = canvas.getContext('2d');
+        
+        const R = 18;  // Outer radius
+        const r = 9;   // Inner radius
+        
+        function draw() {
+            // Update dimensions in case window resized
+            canvas.width = 150;
+            canvas.height = window.innerHeight;
             
-            // Epicycloid Math
-            for (let t = 0; t <= Math.PI * 2; t += 0.2) {
-                let x = (R + r) * Math.cos(t) - r * Math.cos(((R + r) / r) * t);
-                let z = (R + r) * Math.sin(t) - r * Math.sin(((R + r) / r) * t);
+            // Get current scroll position
+            const scrollY = window.scrollY || window.pageYOffset;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'rgba(44, 62, 80, 0.2)'; // Match your new deep blue
+            ctx.lineWidth = 1;
+            
+            const centerX = cfg.isLeft ? 50 : 100;
+
+            // Draw the curves down the page
+            for (let y = -100; y < canvas.height + 100; y += 12) {
+                // The Magic: 'angle' now includes scrollY
+                // Changing '0.005' makes it spin faster or slower when you scroll
+                let scrollEffect = scrollY * 0.005; 
+                let angle = (y / 60) + scrollEffect;
                 
-                // Projecting it to create a 3D helix spiral look
-                let finalX = centerX + x * Math.cos(angle) - z * Math.sin(angle);
-                let finalY = yOffset + x * Math.sin(angle) + z * Math.cos(angle);
-                
-                if (t === 0) ctx.moveTo(finalX, finalY);
-                else ctx.lineTo(finalX, finalY);
+                ctx.beginPath();
+                for (let t = 0; t <= Math.PI * 2; t += 0.3) {
+                    // Standard Epicycloid parametric equations
+                    let x = (R + r) * Math.cos(t) - r * Math.cos(((R + r) / r) * t);
+                    let z = (R + r) * Math.sin(t) - r * Math.sin(((R + r) / r) * t);
+                    
+                    // Rotate the points in "3D" space based on scroll
+                    let finalX = centerX + x * Math.cos(angle) - z * Math.sin(angle);
+                    let finalY = y + x * Math.sin(angle) + z * Math.cos(angle);
+                    
+                    if (t === 0) ctx.moveTo(finalX, finalY);
+                    else ctx.lineTo(finalX, finalY);
+                }
+                ctx.stroke();
             }
         }
-        ctx.stroke();
-    }
 
-    draw();
-    window.addEventListener('resize', () => {
-        canvas.height = window.innerHeight;
+        // Redraw whenever the user scrolls
+        window.addEventListener('scroll', () => {
+            // Use requestAnimationFrame for smooth 60fps performance
+            requestAnimationFrame(draw);
+        });
+        
+        // Initial draw
         draw();
+        
+        // Ensure it draws correctly if window is resized
+        window.addEventListener('resize', draw);
     });
 }
 
-// Run for both sides
-drawHelix('leftCanvas', true);
-drawHelix('rightCanvas', false);
+initHelix();
 </script>
 
 </body>
