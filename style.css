@@ -8,6 +8,25 @@
     --link-accent: #0984e3;
 }
 
+.helix-canvas {
+    position: fixed;
+    top: 0;
+    width: 150px; /* Width of the side decorations */
+    height: 100%;
+    z-index: -1; /* Keeps it behind your text */
+    pointer-events: none; /* Allows you to click "through" it */
+}
+
+#leftCanvas { left: 0; }
+#rightCanvas { right: 0; }
+
+/* Adjust main container so text doesn't overlap the curves */
+.container {
+    max-width: 900px; 
+    position: relative;
+    z-index: 1;
+}
+
 * {
     box-sizing: border-box;
 }
