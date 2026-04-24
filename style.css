@@ -8,6 +8,10 @@
     --link-accent: #0984e3;
 }
 
+main {
+    flex: 1 0 auto; /* This forces the main content to take up all available space */
+}
+
 .helix-canvas {
     position: fixed;
     top: 0;
