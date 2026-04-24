@@ -8,6 +8,9 @@
 </head>
 <body>
 
+    <canvas id="leftCanvas" class="helix-canvas"></canvas>
+    <canvas id="rightCanvas" class="helix-canvas"></canvas>
+
     <header class="main-banner">
         <div class="container banner-content">
             <div class="logo"> Your Name/Title </div>
@@ -44,6 +47,59 @@
             <p>Connect: <a href="mailto:email@example.com">Email</a> | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
         </div>
     </footer>
+
+    <script>
+function drawHelix(canvasId, isLeft) {
+    const canvas = document.getElementById(canvasId);
+    const ctx = canvas.getContext('2d');
+    
+    // Set internal resolution
+    canvas.width = 150;
+    canvas.height = window.innerHeight;
+
+    const R = 20;  // Radius of fixed circle
+    const r = 10;  // Radius of rolling circle
+    const centerY = canvas.height / 2;
+    const centerX = isLeft ? 40 : 110;
+    
+    ctx.strokeStyle = 'rgba(52, 152, 219, 0.3)'; // Faded blue to match banner
+    ctx.lineWidth = 1;
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+
+        // We loop through the height of the page to create the "Helix" effect
+        for (let yOffset = -200; yOffset < canvas.height + 200; yOffset += 5) {
+            let angle = (yOffset / 50); // Controls the "twist" of the helix
+            
+            // Epicycloid Math
+            for (let t = 0; t <= Math.PI * 2; t += 0.2) {
+                let x = (R + r) * Math.cos(t) - r * Math.cos(((R + r) / r) * t);
+                let z = (R + r) * Math.sin(t) - r * Math.sin(((R + r) / r) * t);
+                
+                // Projecting it to create a 3D helix spiral look
+                let finalX = centerX + x * Math.cos(angle) - z * Math.sin(angle);
+                let finalY = yOffset + x * Math.sin(angle) + z * Math.cos(angle);
+                
+                if (t === 0) ctx.moveTo(finalX, finalY);
+                else ctx.lineTo(finalX, finalY);
+            }
+        }
+        ctx.stroke();
+    }
+
+    draw();
+    window.addEventListener('resize', () => {
+        canvas.height = window.innerHeight;
+        draw();
+    });
+}
+
+// Run for both sides
+drawHelix('leftCanvas', true);
+drawHelix('rightCanvas', false);
+</script>
 
 </body>
 </html>
