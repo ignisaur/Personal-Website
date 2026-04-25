@@ -80,7 +80,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px; /* Spacing between the buttons */
+    gap: 10px; /* Spacing between the buttons */
 }
 
 /* Specific Style: Little rounded rectangle, black color, white text */
@@ -88,11 +88,12 @@ body {
     text-decoration: none;
     background-color: #1e1e1e; /* Dark (nearly black) for contrast */
     color: white !important; /* Forces text white even if other link styles exist */
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 25px; /* Creates the pill shape/rounded rectangle */
     font-size: 0.95rem;
     font-weight: 500;
     transition: background-color 0.2s ease; /* Smooth hover effect */
+    white-space: nowrap;
 }
 
 /* Simple hover interaction */
@@ -155,6 +156,11 @@ body {
     
     .logo { margin-bottom: 1rem;}
     .bio-text h1 { font-size: 2rem; }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 /* Footer (Basic) */
