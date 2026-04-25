@@ -143,6 +143,8 @@ body {
 /* Photo Styling (on the left) */
 .bio-image {
     text-align: center; /* Center it within its grid column */
+    max-width: 100%;
+    height: auto; 
 }
 
 .rounded-profile {
@@ -179,6 +181,11 @@ body {
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .bio-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 }
 
