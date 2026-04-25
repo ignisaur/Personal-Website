@@ -83,7 +83,7 @@ body {
     padding: 8px 18px;       /* Gives it the "button" shape */
     border-radius: 25px;     /* Makes it a rounded rectangle */
     font-weight: 700;
-    font-size: 1.1rem;       /* Slightly larger than the nav links */
+    font-size: 1.5rem;       /* Slightly larger than the nav links */
     transition: background-color 0.2s ease, transform 0.1s ease;
     display: inline-block;   /* Ensures padding is respected */
 }
