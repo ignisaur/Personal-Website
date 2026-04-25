@@ -5,7 +5,7 @@ title: Home
 
 # About Me
 <div class="bio-grid">
-    <div class="bio-image"><img src="profile.jpg" class="rounded-profile"></div>
+    <div class="bio-image"><img src="professional website.jpg" class="rounded-profile"></div>
     <div class="bio-text">Insert biographical information here.</div>
 </div>
 
