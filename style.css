@@ -74,6 +74,19 @@ body {
     font-weight: 700;
 }
 
+/* --- Logo Link Styling --- */
+.logo-link {
+    text-decoration: none; /* Removes the underline */
+    color: white;          /* Keeps it white against the blue banner */
+    font-weight: 700;      /* Keeps it bold */
+    transition: opacity 0.2s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.8;          /* Gives a subtle "press" effect when hovered */
+    color: white;          /* Ensures it stays white even on hover */
+}
+
 /* The Navigation List */
 .main-nav ul {
     list-style: none;
