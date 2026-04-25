@@ -146,7 +146,6 @@ body {
 }
 
 .rounded-profile {
-    max-width: 100%; /* Keep the picture responsive */
     height: 500px;
     width: 500px; /* Sets a fixed width for the profile picture */
     border-radius: 50%; /* This is what makes it perfectly round */
