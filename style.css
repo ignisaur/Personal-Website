@@ -75,16 +75,23 @@ body {
 }
 
 /* --- Logo Link Styling --- */
+/* --- Logo Link Styling (White Rounded Rectangle) --- */
 .logo-link {
-    text-decoration: none; /* Removes the underline */
-    color: white;          /* Keeps it white against the blue banner */
-    font-weight: 700;      /* Keeps it bold */
-    transition: opacity 0.2s ease;
+    text-decoration: none;
+    background-color: white; /* The rounded rectangle color */
+    color: #1e1e1e;          /* Black text to contrast the white */
+    padding: 8px 18px;       /* Gives it the "button" shape */
+    border-radius: 25px;     /* Makes it a rounded rectangle */
+    font-weight: 700;
+    font-size: 1.1rem;       /* Slightly larger than the nav links */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-block;   /* Ensures padding is respected */
 }
 
 .logo-link:hover {
-    opacity: 0.8;          /* Gives a subtle "press" effect when hovered */
-    color: white;          /* Ensures it stays white even on hover */
+    background-color: #f0f0f0; /* Subtly grey on hover so you know it's clickable */
+    color: black;
+    transform: scale(1.02);    /* Subtle "pop" effect */
 }
 
 /* The Navigation List */
