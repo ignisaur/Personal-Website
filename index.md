@@ -13,5 +13,4 @@ title: Home
         <p>
             I try to share math with others frequently, which includes collaboration, mentoring, and outreach. Some of my materials related to these activities is found on the Other                 Activities tab. Also included is a list of math/math history facts that I find interesting -- I particularly enjoy sharing these with students when I can. 
         </p>
-    </div>
 </div> 
