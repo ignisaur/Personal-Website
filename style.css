@@ -44,6 +44,9 @@ body {
     display: flex;
     flex-direction: column;
     /* Keeps the font/color settings you already had */
+
+    /* Font is Lato */
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
