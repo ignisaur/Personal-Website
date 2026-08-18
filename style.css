@@ -179,8 +179,17 @@ body {
     }
 
     .bio-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    }
+
+    .bio-image {
+        justify-content: center;
+    }
+
+    .rounded-profile {
+        width: 280px;
+        height: 280px;
     }
 }
 
