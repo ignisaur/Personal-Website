@@ -3,11 +3,7 @@ layout: default
 title: Home
 ---
 
-<div class="bio-grid">
-    <div class="bio-image">
-        <img src="professional website.jpg" class="rounded-profile">
-    </div>
-    <div class="bio-text"> 
+<div class="bio-text"> 
         <h1>
             About Me
         </h1>
