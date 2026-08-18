@@ -134,26 +134,21 @@ body {
 
 .bio-grid {
     display: grid;
-    /* Picture takes 1 unit of space, text takes 2 units */
-    grid-template-columns: 1fr 2fr; 
-    gap: 50px; /* Space between picture and text */
-    align-items: center; /* Vertically centers the text next to the photo */
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
+    align-items: center;
 }
 
-/* Photo Styling (on the left) */
 .bio-image {
-    text-align: center; /* Center it within its grid column */
-    max-width: 100%;
-    height: auto; 
+    display: flex;
+    justify-content: center;
 }
 
 .rounded-profile {
-    height: 500px;
-    width: 500px; /* Sets a fixed width for the profile picture */
-    border-radius: 50%; /* This is what makes it perfectly round */
-    object-fit: cover; /* Ensures the picture fills the circle perfectly if it's not a square */
-    border: 5px solid white; /* Adds a clean border (optional but professional) */
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Adds depth */
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Bio Text Styling (on the right) */
