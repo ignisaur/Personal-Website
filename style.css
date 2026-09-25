@@ -26,7 +26,9 @@ main {
 
 /* Adjust main container so text doesn't overlap the curves */
 .container {
-    max-width: 900px; 
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
     position: relative;
     z-index: 1;
 }
@@ -47,12 +49,6 @@ body {
 
     /* Font is Lato */
     font-family: 'Lato', sans-serif;
-}
-
-.container {
-    max-width: 1300px; /* A wider container works well with a main banner */
-    margin: 0 auto;
-    padding: 0 2rem;
 }
 
 /* --- 1. The Main Banner Styling --- */
