@@ -148,10 +148,12 @@ body {
 }
 
 .rounded-profile {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 /* Bio Text Styling (on the right) */
