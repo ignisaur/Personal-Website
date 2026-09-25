@@ -4,6 +4,7 @@ title: Home
 ---
 
 <div class="bio-text"> 
+        <img src="{{ '/professional website.jpg' | relative_url }}" alt="Professional photo" class="bio-image">
         <h1>
             About Me
         </h1>
