@@ -1,5 +1,5 @@
 ---
-layout: teachlayout
+layout: teachlay
 title: Teaching
 ---
 
