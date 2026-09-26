@@ -1,9 +1,8 @@
 ---
-layout: default
 title: Teaching
 ---
 
-# Teaching
+# Research 
 ### Current Courses
 * **Bio 101**: Introduction to Biology
 * **Chem 202**: Advanced Chemistry
