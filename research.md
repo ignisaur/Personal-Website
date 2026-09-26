@@ -1,5 +1,5 @@
 ---
-layout: researchlayout
+layout: reslay
 title: Research
 ---
 
