@@ -34,20 +34,20 @@
 
     <main>
         <section id="about" class="bio-section">
+            {% if page.show_image %}
             <div class="container bio-grid">
 
-                {% if page.show_image %} 
                 <div class="bio-image">
                     <img src="{{ '/professional website.jpg' | relative_url }}"
                                  class="rounded-profile"
                                  alt="Alex Lee">
                 </div>
-                {% endif %}
 
                 <div class="bio-text">
                     {{ content }}
                 </div>
             </div>
+            {% endif %}
 
             
     </section>
