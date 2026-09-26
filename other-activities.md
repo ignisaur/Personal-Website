@@ -1,6 +1,6 @@
 ---
 layout: othlay
-title: Teaching
+title: Other Activities
 ---
 
 # Teaching
