@@ -1,6 +1,5 @@
 ---
 layout: default
-show_image: true
 title: Home
 ---
 
