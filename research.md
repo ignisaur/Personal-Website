@@ -1,6 +1,6 @@
 ---
 layout: researchlayout
-title: Teaching
+title: Research
 ---
 
 # Research 
