@@ -1,4 +1,5 @@
 ---
+layout: researchlayout
 title: Teaching
 ---
 
